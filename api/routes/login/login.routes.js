@@ -9,7 +9,7 @@ const someOtherPlaintextPassword = 'not_bacon';
 var saltNum = 10;
 const jwt = require('jsonwebtoken');
 
-// const sign_up = require("../sign_up/sign_up.routes");
+const sign_up = require("../sign_up/sign_up.routes");
 
 // TEST
 // var req = {
