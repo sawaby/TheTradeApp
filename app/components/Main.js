@@ -10,10 +10,11 @@ var Login = require("./Login");
 var Portfolio = require("./Portfolio");
 var Trading = require("./Trading");
 var Nav = require("./Nav");
+var Signup = require("./Signup");
 // var Modal = require("./modal");
-
+var headerColor ={background: '#c51162'};
 // require helper for api calls
-var helpers = require("../utils/helpers");
+//var helpers = require("../utils/helpers");
 
 //create main component
 var Main = React.createClass({
@@ -24,9 +25,9 @@ var Main = React.createClass({
 
             <div>
                 <main>
-                    <nav>
+                    <nav style={headerColor}>
                         <div className="nav-wrapper">
-                            <a href="#" className="brand-logo">The Trade App</a>
+                            <a href="#"  className="brand-logo">The Trade App<sup>®</sup></a>
                         </div>
                     </nav>
                     <div className="container">

@@ -2,13 +2,23 @@
 // include react
 
 import React, { Component } from 'react';
+var Link = require('react-router').Link;
 var axios = require("axios");
 var loginStyle = {
     display: "inline-block",
     padding: "32px 48px 0px 48px",
     border: "1px solid #EEE"
 };
+var but={
+    background: '#c51162'
+};
 
+var but2={
+    background: '#f8bbd0',
+    margin: '0px 0px 20px ',
+    
+};
+var color ={color: 'black'};
 //create saved component
 //var Login = React.createComponent({
 class Login extends Component {
@@ -21,6 +31,7 @@ class Login extends Component {
         this.onEmailChange = this.onEmailChange.bind(this);
         this.onPasswordChange = this.onPasswordChange.bind(this);
         this.signIn = this.signIn.bind(this);
+        // this.signUp = this.signUp.bind(this);
     }
 
     onEmailChange(event) {
@@ -49,6 +60,10 @@ class Login extends Component {
             });
     }
 
+// signUp() {
+       
+//       this.props.history.push('/Portfolio');     
+//     }
 
     //onclick function /form submit
 
@@ -83,8 +98,14 @@ class Login extends Component {
                                 <br />
                                 <div className="center">
                                     <div className='row'>
-                                        <button type='submit' name='btn_login' className='col s12 btn btn-large waves-effect indigo' onClick={this.signIn}>Login</button>
+                                        <button type='submit' name='btn_login' style={but} className='col s12 btn btn-large' onClick={this.signIn}>Login</button>
                                     </div>
+                                </div>
+                                <div className="center">
+                                    <ul>
+                                        <li style={but2} className='col s12 btn'><Link to="/signup" style={color}>Sign Up</Link></li>
+                                        {/*<a type='submit' name='btn_signup' style={but2} className='col s12 btn'  onClick={this.signUp()}>Sign Up</a>*/}
+                                    </ul>
                                 </div>
                             </form>
                         </div>

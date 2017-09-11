@@ -23,6 +23,7 @@ var Trading = require("../components/Trading");
 var Balances = require("../components/Balances");
 var Portfolio = require("../components/Portfolio");
 var Login = require("../components/Login");
+var Signup = require("../components/Signup");
 var Nav = require("../components/Nav");
 //var Modal = require("../components/modal");
 
@@ -39,7 +40,7 @@ var Routes = React.createClass({
                     <Route path="Portfolio" component={Portfolio} />
                     <Route path="Trading" component={Trading} />
                     <Route path="Login" component={Login} />
-                    
+                    <Route path="Signup" component={Signup} />
 
                     {/* If user selects any other path... we get the Home Route */}
                     <IndexRoute component={Login} />

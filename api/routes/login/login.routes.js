@@ -4,12 +4,12 @@ const User = require('../../models/user');
 const Trade = require('../../models/trade');
 //const Login = require('');
 var bcrypt = require('bcrypt');
-const myPlaintextPassword = 's0/\/\P4$$w0rD';
-const someOtherPlaintextPassword = 'not_bacon';
+//const myPlaintextPassword = 's0/\/\P4$$w0rD';
+//const someOtherPlaintextPassword = 'not_bacon';
 var saltNum = 10;
 const jwt = require('jsonwebtoken');
 
-const sign_up = require("../sign_up/sign_up.routes");
+//const sign_up = require("../sign_up/signup.routes");
 
 // TEST
 // var req = {
@@ -18,7 +18,7 @@ const sign_up = require("../sign_up/sign_up.routes");
 // };
 
 //check if the user is a new user
-// router.post('/singUP', (req, res) => {
+// router.post('/singup', (req, res) => {
 //     User.findOne({ email: req.body.email })
 //         .then((data) => {
 
@@ -54,9 +54,11 @@ const sign_up = require("../sign_up/sign_up.routes");
 
             // IF USER EXISTS, THEN HASH PASSWORD AND CHECK HASH-TO-PASSWORD
             .then((data) => {
-                console.log("data is ",data);
+                
+                
                 var hash = bcrypt.hashSync(req.body.pass, data.salt);
-                console.log(req.body.email)
+                console.log("data pass is ",data.pass);
+                console.log("data req hash is ",hash);
                 if (data.pass === hash) {
                     var token = jwt.sign({
                         'email': req.body.email
